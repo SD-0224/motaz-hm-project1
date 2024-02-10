@@ -9,7 +9,37 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200:400:700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="style.css" />
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>Web Topics</title>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <nav class="navbar">
+        <a href="#" class="brand-logo">Web Topics</a>
+        <ul>
+          <li>
+            <button>
+              <ion-icon name="sunny-outline" size="small"></ion-icon>
+              <h3>Dark Mode</h3>
+            </button>
+          </li>
+          <li>
+            <button>
+              <ion-icon name="heart-outline" size="small"></ion-icon>
+              <h3>Favourites</h3>
+            </button>
+          </li>
+        </ul>
+      </nav>
+      <section class="welcome-container">
+        <div id="header-gradiant"></div>
+        <div id="header-triangle"></div>
+
+        <h1 class="welcome-header">Welcome to our website!</h1>
+        <p class="welcome-text">We have a new design that's fresh, modern, and easy to use.</p>
+      </section>
+    </header>
+  </body>
 </html>
