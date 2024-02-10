@@ -61,8 +61,11 @@ body {
 
 .navbar button:hover {
   background-color: var(--brand-primary);
-  color: var(--bg_default);
   border-color: var(--brand-primary);
+}
+
+.navbar button:hover * {
+  color: var(--bg_default);
 }
 
 .shape-style-container {
