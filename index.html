@@ -9,7 +9,8 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200:400:700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="header.css" />
+    <link rel="stylesheet" href="index.css" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <title>Web Topics</title>
@@ -41,5 +42,30 @@
         <p class="welcome-text">We have a new design that's fresh, modern, and easy to use.</p>
       </section>
     </header>
+    <main class="cards-section">
+      <section class="filter-bar">
+        <div>
+          <ion-icon id="search-icon" name="search-outline"></ion-icon>
+          <input id="filter-search" type="text" placeholder="Search the website" />
+        </div>
+        <div>
+          <h4>Sort by:</h4>
+          <select id="filter-sort" name="filter-sort">
+            <option value="Default">Default</option>
+          </select>
+        </div>
+        <div>
+          <h4>Filter by:</h4>
+          <select id="filter-sort" name="filter-sort">
+            <option value="Default">Default</option>
+          </select>
+        </div>
+      </section>
+      <ul class="cards-container">
+        <li>
+          <article></article>
+        </li>
+      </ul>
+    </main>
   </body>
 </html>
