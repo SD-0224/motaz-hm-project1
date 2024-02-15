@@ -1,4 +1,4 @@
-.cards-section {
+.main {
   margin-top: 2rem;
   display: flex;
   flex-direction: column;
@@ -9,13 +9,13 @@
   width: 90%;
   display: flex;
   justify-content: center;
+  margin: auto 0;
   border-radius: 8px;
   border-style: solid;
   border-width: 1px;
   border-color: var(--lines-color);
   background: var(--bg_default);
   box-shadow: 0px 0px 5px #00000025;
-
 }
 
 .filter-bar * {
