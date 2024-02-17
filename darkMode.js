@@ -9,7 +9,7 @@ function darkToggle() {
 }
 
 function detectDarkMode() {
-  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  if (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches) {
     darkToggle();
   }
 }
