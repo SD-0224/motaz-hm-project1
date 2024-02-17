@@ -21,6 +21,7 @@
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="./app.js" defer></script>
+    <script src="./darkMode.js" defer></script>
     <title>Web Topics (Work in progess)</title>
   </head>
   <body>
@@ -29,7 +30,7 @@
         <a href="#" class="brand-logo">Web Topics</a>
         <ul class="nav-buttons">
           <li>
-            <button onclick="darkToggle()">
+            <button id="dark-toggle">
               <ion-icon name="sunny-outline" size="small"></ion-icon>
               <h3>Dark Mode</h3>
             </button>
@@ -77,11 +78,5 @@
         </ul>
       </section>
     </main>
-    <script>
-      function darkToggle() {
-        let element = document.body;
-        element.classList.toggle("dark");
-      }
-    </script>
   </body>
 </html>
