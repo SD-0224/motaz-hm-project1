@@ -1,6 +1,5 @@
 .cards-section {
   width: 90%;
-  min-height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -14,6 +13,30 @@
   grid-template-columns: repeat(5, 1fr);
   margin: auto;
   gap: 1rem;
+}
+
+@media (max-width: 1800px){
+  #cards-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1450px){
+  #cards-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 1100px){
+  #cards-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 750px){
+  #cards-container {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
 #cards-container li {
