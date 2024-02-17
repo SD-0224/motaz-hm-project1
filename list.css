@@ -113,6 +113,7 @@
 .stars-inner{
   position: absolute;
   color: orange;
+  overflow: hidden;
   top: 0;
   left: 0;
 }
