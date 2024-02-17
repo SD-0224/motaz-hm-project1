@@ -1,6 +1,11 @@
 const courseContainer = document.getElementById("cards-container");
 const topicsFound = document.getElementById("topics-found");
 
+if (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches) {
+  let element = document.body;
+  element.classList.toggle("dark");
+}
+
 displayList();
 
 //functions
