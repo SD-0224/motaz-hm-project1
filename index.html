@@ -29,7 +29,7 @@
         <a href="#" class="brand-logo">Web Topics</a>
         <ul class="nav-buttons">
           <li>
-            <button>
+            <button onclick="darkToggle()">
               <ion-icon name="sunny-outline" size="small"></ion-icon>
               <h3>Dark Mode</h3>
             </button>
@@ -77,5 +77,11 @@
         </ul>
       </section>
     </main>
+    <script>
+      function darkToggle() {
+        let element = document.body;
+        element.classList.toggle("dark");
+      }
+    </script>
   </body>
 </html>
