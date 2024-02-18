@@ -11,27 +11,40 @@ async function displayList() {
     return;
   }
 
-  topicsFound.innerText = `"${data.length}" topics found`;
+  topicsFound.innerText = `"${data.length}" Web Topics Found`;
 
   data.map((item) => {
     const liElement = document.createElement("li");
+    const ratingPercentage = (item.rating / 5) * 100
     liElement.innerHTML = `
-        <a href="/${item.id}">
-            <img src="./images/${item.image}" alt="html card image" />
-            <article>
-                <h5>${item.category}</h5>
-                <h3>${item.topic}</h3>
-                <div class="stars-container">
-                    <div class="stars-outer">
-                        &#9734;&#9734;&#9734;&#9734;&#9734;
-                        <div class="stars-inner" style="width: ${
-                          (item.rating / 5) * 100
-                        }%;">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-                    </div>
-                    <p>${item.rating.toFixed(1)}</p>
+        <a href="/details.html">
+          <article class="article-container">
+            <div class="article-image-container">
+              <img class="article-image" src="./images/${item.image}" alt="html card image" />
+            </div>
+            <div class="article-text-container">
+              <div class="article-category">${item.category}</div>
+              <h3 class="article-topic">${item.topic}</h3>
+              <div class="stars-container">
+                <div class="stars-outer-container">
+                  <ion-icon size="medium" name="star-outline"></ion-icon>
+                  <ion-icon size="medium" name="star-outline"></ion-icon>
+                  <ion-icon size="medium" name="star-outline"></ion-icon>
+                  <ion-icon size="medium" name="star-outline"></ion-icon>
+                  <ion-icon size="medium" name="star-outline"></ion-icon>
+
+                  <div class="stars-inner-container" style="clip-path: polygon(0 0, ${ratingPercentage}% 0, ${ratingPercentage}% 100%, 0% 100%);">
+                    <ion-icon size="medium" name="star"></ion-icon>
+                    <ion-icon size="medium" name="star"></ion-icon>
+                    <ion-icon size="medium" name="star"></ion-icon>
+                    <ion-icon size="medium" name="star"></ion-icon>
+                    <ion-icon size="medium" name="star"></ion-icon>
+                  </div>
                 </div>
-                <h4>Author: ${item.name}</h4>
-            </article>
+                </div>
+                <div class="article-author">Author: ${item.name}</div>
+              </div>
+          </article>
         </a>`;
     courseContainer.appendChild(liElement);
   });

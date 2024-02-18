@@ -26,46 +26,47 @@
   </head>
   <body class="dark">
     <header>
-      <nav class="navbar">
-        <a href="#" class="brand-logo">Web Topics</a>
+      <nav class="navbar px-4pc">
+        <a href="index.html" class="brand-logo">Web Topics</a>
         <ul class="nav-buttons">
           <li>
             <button id="dark-toggle">
-              <ion-icon name="sunny-outline" size="small"></ion-icon>
+              <ion-icon id="dark-icon" name="moon-outline" size="smaller"></ion-icon>
               <h3>Dark Mode</h3>
             </button>
           </li>
           <li>
             <button>
-              <ion-icon name="heart-outline" size="small"></ion-icon>
+              <ion-icon name="heart-outline" size="smaller"></ion-icon>
               <h3>Favourites</h3>
             </button>
           </li>
         </ul>
       </nav>
       <section class="welcome-container">
-        <div id="header-gradiant"></div>
+        <div id="header-triangle-gradiant"></div>
         <div id="header-triangle"></div>
-
-        <h1 class="welcome-header">Welcome to our website!</h1>
-        <p class="welcome-text">We have a new design that's fresh, modern, and easy to use.</p>
+        <div class="welcome-text-container">
+          <h1 class="welcome-header">Welcome to our website!</h1>
+          <p class="welcome-text">We have a new design that's fresh, modern, and easy to use.</p>
+        </div>
       </section>
     </header>
-    <main class="main">
-      <section class="filter-bar">
-        <div>
+    <main class="main px-4pc">
+      <section class="filter-bar-container">
+        <div class="search-bar">
           <ion-icon id="search-icon" name="search-outline"></ion-icon>
           <input id="filter-search" type="text" placeholder="Search the website" />
         </div>
-        <div>
-          <h4>Sort by:</h4>
-          <select id="filter-sort" name="filter-sort">
+        <div class="sortby-bar">
+          <label for="sortby">Sort by:</label>
+          <select id="sortby" name="filter-sort">
             <option value="Default">Default</option>
           </select>
         </div>
-        <div>
-          <h4>Filter by:</h4>
-          <select id="filter-sort" name="filter-sort">
+        <div class="filterby-bar">
+          <label for="filterby">Filter by:</label>
+          <select id="filterby" name="filter-sort">
             <option value="Default">Default</option>
           </select>
         </div>

@@ -7,113 +7,106 @@
   margin: 1rem auto;
 }
 
-#topics-found{
-  margin-left: 5%;
+#topics-found {
+  font-weight: bold;
 }
 
 #cards-container {
-  padding: 1rem 5%;
+  padding: 1rem 0;
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  margin: auto;
-  gap: 1rem;
-}
-
-@media (max-width: 1800px){
-  #cards-container {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-@media (max-width: 1450px){
-  #cards-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 1100px){
-  #cards-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 750px){
-  #cards-container {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 30px;
 }
 
 #cards-container li {
-  width: 1/5%;
-  min-width: 300px;
-  height: 400px;
+  height: 280px;
   border-radius: 8px;
+  overflow: hidden;
   background-color: var(--bg_default);
-  box-shadow: 0px 0px 5px #00000025;
+  box-shadow: 0px 0px 5px var(--shadow-default);
 }
 
 #cards-container li a {
   width: 100%;
   height: 100%;
-  display: flex;
-  flex-direction: column;
 }
 
-#cards-container article {
+.article-container {
+  position: relative;
+  text-overflow: ellipsis;
   height: 100%;
-  padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
 }
 
-#cards-container img {
-  object-fit: cover;
+.article-image-container {
   background-color: white;
   width: 100%;
+  height: 140px;
+}
+
+.article-image {
+  object-fit: cover;
+  width: inherit;
+  height: inherit;
+}
+
+.article-text-container {
   height: 100%;
-  padding: 0;
+  padding: 1rem;
 }
 
-#cards-container h3 {
+.article-category {
+  font-size: small;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.article-topic {
+  font-size: 0.9rem;
+  height: 2.5rem; /* Adjust the height to fit two lines */
   font-weight: bold;
-  margin-bottom: 2rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Limit to two lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: -0.5px;
 }
 
-#cards-container h4 {
+.article-author {
+  position: absolute;
   font-size: small;
-  color: #808080;
-}
-
-#cards-container h5 {
-  font-size: small;
-  color: #808080;
+  color: gray;
+  bottom: 1rem;
 }
 
 .stars-container {
   display: flex;
   align-items: center;
   gap: 1rem;
-}
-
-.stars-container p {
-  font-weight: bold;
-  color: orange;
-  padding-top: 0.2rem;
-}
-
-.stars-outer{
-  font-size: 1.5rem;
-  color: #ffa60085;
-  position: relative;
-  display: inline-block;
-}
-
-
-.stars-inner{
   position: absolute;
-  color: orange;
-  overflow: hidden;
+  bottom: 2.5rem;
+}
+
+.stars-outer-container {
+  width: 80px;
+  display: flex;
+  gap: 1px;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.stars-inner-container {
+  width: 80px;
+  display: flex;
+  gap: 1px;
+  position: absolute;
   top: 0;
   left: 0;
+}
+
+.stars-container * {
+  color: #e5981a;
 }
