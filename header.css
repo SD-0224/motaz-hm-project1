@@ -147,7 +147,7 @@ body {
 }
 
 .welcome-text-container {
-  width: 420px;
+  max-width: 420px;
   z-index: 2;
   margin-top: 49px;
   margin-left: 16px;
