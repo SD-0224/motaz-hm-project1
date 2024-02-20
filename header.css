@@ -39,7 +39,7 @@ body {
   --lines-color: #dddddd;
   --body-text: #333333;
   --heart-color: #dc143c;
-  --shadow-default: #00000010;
+  --shadow-default: rgba(0, 0, 0, 0.20);
 }
 
 body.dark {
