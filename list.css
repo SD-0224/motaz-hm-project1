@@ -26,6 +26,10 @@
   box-shadow: 0px 0px 5px var(--shadow-default);
 }
 
+#cards-container li:hover {
+  scale: 1.1;
+}
+
 .article-container {
   position: relative;
   text-overflow: ellipsis;
@@ -109,21 +113,22 @@
 
 /* favourites styling */
 
-.favrourites-section {
+#favrourites-section {
   background: var(--bg_default);
   min-height: 180px;
   width: 100%;
   position: fixed;
   align-items: center;
+  overflow-x: scroll;
   bottom: 0;
   box-shadow: 0px 0px 10px var(--shadow-default);
 }
 
 .push-to-bottom {
-  bottom: -100%;
+  bottom: -100% !important;
 }
 
-.favrourites-section h2 {
+#favrourites-section h2 {
   margin-top: 1rem;
   font-size: medium;
   font-weight: bold;
@@ -131,18 +136,23 @@
 
 #favourites-container {
   margin-top: 1rem;
+  margin-bottom: 0.3rem;
   display: flex;
   gap: 1rem;
   align-items: center;
 }
 
 #favourites-container li {
-  width: 120px;
+  min-width: 120px;
   height: 110px;
   border-radius: 8px;
   overflow: hidden;
   background-color: var(--bg_default);
   box-shadow: 0px 0px 10px var(--shadow-default);
+}
+
+#favourites-container li:hover {
+  scale: 1.1;
 }
 
 .fav-article-container {
