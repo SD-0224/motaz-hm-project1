@@ -15,14 +15,14 @@
       href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="header.css" />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="stylesheet" href="list.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/details.css" />
+    <link rel="stylesheet" href="./styles/list.css" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./app.js" defer></script>
-    <script src="./darkMode.js" defer></script>
-    <title>Web Topics (Work in progess)</title>
+    <script src="./scripts/darkMode.js" defer></script>
+    <script src="./scripts/favourites.js" defer></script>
+    <title>Details Page</title>
   </head>
   <body class="dark">
     <header>
@@ -36,7 +36,7 @@
             </button>
           </li>
           <li>
-            <button>
+            <button id="favourites-toggle">
               <ion-icon name="heart-outline" size="smaller"></ion-icon>
               <h3>Favourites</h3>
             </button>
@@ -52,6 +52,84 @@
         </div>
       </section>
     </header>
-    <main class="main px-4pc"></main>
+    <main class="main px-4pc">
+      <section></section>
+
+      <section id="favrourites-section" class="px-4pc push-to-bottom">
+        <h2>My Favourite Topics</h2>
+        <ul id="favourites-container">
+          <li>
+            <a href="/details.html">
+              <article class="fav-article-container">
+                <div class="fav-article-image-container">
+                  <img class="fav-article-image" src="./images/react.webp" alt="React" />
+                </div>
+                <div class="fav-article-text-container">
+                  <h3 class="fav-article-topic">React</h3>
+                  <div class="fav-stars-container">
+                    <div class="stars-outer-container">
+                      <ion-icon size="medium" name="star-outline"></ion-icon>
+                      <ion-icon size="medium" name="star-outline"></ion-icon>
+                      <ion-icon size="medium" name="star-outline"></ion-icon>
+                      <ion-icon size="medium" name="star-outline"></ion-icon>
+                      <ion-icon size="medium" name="star-outline"></ion-icon>
+
+                      <div
+                        class="stars-inner-container"
+                        style="clip-path: polygon(0 0, 75.8% 0, 75.8% 100%, 0% 100%)"
+                      >
+                        <ion-icon size="medium" name="star"></ion-icon>
+                        <ion-icon size="medium" name="star"></ion-icon>
+                        <ion-icon size="medium" name="star"></ion-icon>
+                        <ion-icon size="medium" name="star"></ion-icon>
+                        <ion-icon size="medium" name="star"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </a>
+          </li>
+          <li>
+            <a href="/details.html">
+              <article class="fav-article-container">
+                <div class="fav-article-image-container">
+                  <img class="fav-article-image" src="./images/cloud.jpeg" alt="Cloud Computing" />
+                </div>
+                <div class="fav-article-text-container">
+                  <h3 class="fav-article-topic">Cloud Computing</h3>
+                  <div class="fav-stars-container">
+                    <div class="stars-outer-container">
+                      <ion-icon size="medium" name="star-outline"></ion-icon>
+                      <ion-icon size="medium" name="star-outline"></ion-icon>
+                      <ion-icon size="medium" name="star-outline"></ion-icon>
+                      <ion-icon size="medium" name="star-outline"></ion-icon>
+                      <ion-icon size="medium" name="star-outline"></ion-icon>
+
+                      <div
+                        class="stars-inner-container"
+                        style="clip-path: polygon(0 0, 87.6% 0, 87.6% 100%, 0% 100%)"
+                      >
+                        <ion-icon size="medium" name="star"></ion-icon>
+                        <ion-icon size="medium" name="star"></ion-icon>
+                        <ion-icon size="medium" name="star"></ion-icon>
+                        <ion-icon size="medium" name="star"></ion-icon>
+                        <ion-icon size="medium" name="star"></ion-icon>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+    <footer class="footer-container">
+      <div class="footer-text">
+        <span>Developed With</span> <ion-icon class="heart-icon" name="heart" aria-hidden="true"></ion-icon
+        ><span>© 2023</span>
+      </div>
+    </footer>
   </body>
 </html>
