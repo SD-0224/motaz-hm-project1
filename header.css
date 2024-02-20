@@ -167,6 +167,24 @@ body {
   font-weight: bold;
 }
 
+.footer-container{
+  text-align: center;
+  padding-top: 0.8rem;
+  padding-bottom: 2rem;
+}
+
+.footer-text{
+  display: flex;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart-icon{
+  font-size: 1.8rem;
+  color: #db123a;
+}
+
 @media (max-width: 750px) {
   .nav-buttons h3 {
     display: none;
