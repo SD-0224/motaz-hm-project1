@@ -39,7 +39,7 @@ body {
   --lines-color: #dddddd;
   --body-text: #333333;
   --heart-color: #dc143c;
-  --shadow-default: rgba(0, 0, 0, 0.20);
+  --shadow-default: rgba(0, 0, 0, 0.2);
 }
 
 body.dark {
@@ -76,7 +76,6 @@ body {
   font-size: medium;
   font-weight: bolder;
   letter-spacing: -0.2px;
-
 }
 
 .navbar ul {
@@ -167,20 +166,20 @@ body {
   font-weight: bold;
 }
 
-.footer-container{
+.footer-container {
   text-align: center;
   padding-top: 0.8rem;
   padding-bottom: 2rem;
 }
 
-.footer-text{
+.footer-text {
   display: flex;
   gap: 3px;
   align-items: center;
   justify-content: center;
 }
 
-.heart-icon{
+.heart-icon {
   font-size: 1.8rem;
   color: #db123a;
 }

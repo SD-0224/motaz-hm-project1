@@ -98,7 +98,7 @@ select:focus {
     border-bottom: solid 1px var(--lines-color);
   }
 
-  .sortby-bar{
+  .sortby-bar {
     border-style: hidden;
   }
 }

@@ -1,4 +1,3 @@
-
 [
   {
     "category": "Web Development Languages",
@@ -367,12 +366,7 @@
     "image": "responsive.gif",
     "topic": "Responsive Design",
     "description": "Responsive design is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes.",
-    "subtopics": [
-      "Fluid grids",
-      "Flexible images",
-      "Media queries",
-      "Viewport"
-    ],
+    "subtopics": ["Fluid grids", "Flexible images", "Media queries", "Viewport"],
     "id": 21
   },
   {
@@ -416,13 +410,7 @@
     "image": "ui.png",
     "topic": "User Interface (UI)",
     "description": "User interface (UI) refers to the visual elements and controls that users interact with when using a software application or website.",
-    "subtopics": [
-      "Layout",
-      "Typography",
-      "Color schemes",
-      "Navigation",
-      "Buttons and forms"
-    ],
+    "subtopics": ["Layout", "Typography", "Color schemes", "Navigation", "Buttons and forms"],
     "id": 24
   },
   {
@@ -584,12 +572,7 @@
     "image": "docker.png",
     "topic": "Docker",
     "description": "Docker is a platform that allows developers to easily create, deploy, and run applications in containers. Containers are lightweight, standalone, and portable environments that contain all the necessary software, libraries, and configurations required for an application to run.",
-    "subtopics": [
-      "Docker Engine",
-      "Docker Compose",
-      "Docker Swarm",
-      "Docker Hub"
-    ],
+    "subtopics": ["Docker Engine", "Docker Compose", "Docker Swarm", "Docker Hub"],
     "id": 34
   },
   {
@@ -650,13 +633,7 @@
     "image": "cms.png",
     "topic": "Content Management Systems (CMS)",
     "description": "A content management system (CMS) is a software application that enables users to create, manage, and publish digital content, typically on the internet. CMSs are commonly used for websites, blogs, and other online publications that require frequent updates and changes.",
-    "subtopics": [
-      "WordPress",
-      "Drupal",
-      "Joomla",
-      "Sitecore",
-      "Contentful"
-    ],
+    "subtopics": ["WordPress", "Drupal", "Joomla", "Sitecore", "Contentful"],
     "id": 38
   },
   {
