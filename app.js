@@ -17,7 +17,7 @@ async function displayList() {
     const liElement = document.createElement("li");
     const ratingPercentage = (item.rating / 5) * 100;
     liElement.innerHTML = `
-        <a href="/details.html">
+        <a href="details.html">
           <article class="article-container">
             <div class="article-image-container">
               <img class="article-image" src="./images/${item.image}" alt="${item.topic}" />
