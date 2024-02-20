@@ -15,12 +15,12 @@ async function displayList() {
 
   data.map((item) => {
     const liElement = document.createElement("li");
-    const ratingPercentage = (item.rating / 5) * 100
+    const ratingPercentage = (item.rating / 5) * 100;
     liElement.innerHTML = `
         <a href="/details.html">
           <article class="article-container">
             <div class="article-image-container">
-              <img class="article-image" src="./images/${item.image}" alt="html card image" />
+              <img class="article-image" src="./images/${item.image}" alt="${item.topic}" />
             </div>
             <div class="article-text-container">
               <div class="article-category">${item.category}</div>
