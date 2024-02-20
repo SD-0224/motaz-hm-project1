@@ -5,7 +5,7 @@ displayList();
 
 //functions
 async function displayList() {
-  const data = await fetchData("../data/data.json");
+  const data = await fetchData("data.json");
 
   if (!data) {
     return;
