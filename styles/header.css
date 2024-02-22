@@ -197,3 +197,13 @@ body {
     height: 26px;
   }
 }
+
+
+.bold{
+  font-weight: bold;
+}
+
+.inline-link{
+  text-decoration: underline;
+  color: #005286;
+}
