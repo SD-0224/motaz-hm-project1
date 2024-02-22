@@ -180,7 +180,7 @@ body {
 
 .heart-icon {
   font-size: 1.8rem;
-  color: #db123a;
+  color: var(--heart-color);
 }
 
 @media (max-width: 750px) {
