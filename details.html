@@ -52,11 +52,11 @@
         </div>
       </section>
     </header>
-    <main class="main px-4pc">
-      <section>
-        <div>
-          <div>Web Development Languaes</div>
-          <h2>Javascript</h2>
+    <main class="main">
+      <section class="details-container">
+        <div class="details-text-container">
+          <div class="details-category">Web Development Languaes</div>
+          <h2 class="details-title">Javascript</h2>
           <div class="details-stars-container">
             <div class="stars-outer-container">
               <ion-icon size="medium" name="star-outline"></ion-icon>
@@ -77,34 +77,58 @@
               </div>
             </div>
           </div>
-          <p>
+          <p class="details-content">
             JavaScript is a high-level programming language that is used to create interactive web pages and
             dynamic user interfaces. It allows for the creation of complex, responsive web applications that
             can run both on the client side (in the web browser) and the server side (using Node.js).
             JavaScript is one of the most widely-used programming languages in web development.
           </p>
         </div>
-        <aside>
-          <div>
-            <img src="./images/javascript.jpg" alt="Javascript" />
+        <aside class="details-card-container">
+          <div class="details-image-container">
+            <img class="details-image" src="./images/javascript.jpg" alt="Javascript" />
           </div>
-          <div><span>Javascript</span> by <a href="#">Emily Chen</a></div>
-          <div>
-            <div>Interested about this topic?</div>
-            <button>
-              <span>Add to Favourites</span>
-              <ion-icon name="heart-outline" aria-hidden="true"></ion-icon>
-            </button>
-            <div>Unlimited Credits</div>
+          <div class="details-content-container">
+            <div class="details-topic-text">
+              <span class="bold">Javascript</span> by <a href="#" class="inline-link">Emily Chen</a>
+            </div>
+            <div class="add-fav-container">
+              <div>Interested about this topic?</div>
+              <button class="add-fav-button">
+                <span>Add to Favourites</span>
+                <ion-icon size="large" name="heart-outline" aria-hidden="true"></ion-icon>
+              </button>
+              <div class="add-fav-credits">Unlimited Credits</div>
+            </div>
           </div>
         </aside>
       </section>
-      <section>
-        <h2>Javascript Sub Topics</h2>
+      <section class="sub-topics-container">
+        <h2 class="sub-topics-header">Javascript Sub Topics</h2>
         <ul>
-          <li>
-            <ion-icon name="checkmark-circle-outline"></ion-icon>
-            <h3>JavaScript data types and variables</h3>
+          <li class="sub-topic-container">
+            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
+            <h3 class="sub-tobic-header">JavaScript data types and variables</h3>
+          </li>
+          <li class="sub-topic-container">
+            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
+            <h3 class="sub-tobic-header">JavaScript functions and control flow</h3>
+          </li>
+          <li class="sub-topic-container">
+            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
+            <h3 class="sub-tobic-header">JavaScript objects and classes</h3>
+          </li>
+          <li class="sub-topic-container">
+            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
+            <h3 class="sub-tobic-header">JavaScript DOM manipulation and events</h3>
+          </li>
+          <li class="sub-topic-container">
+            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
+            <h3 class="sub-tobic-header">JavaScript asynchronous programming and callbacks</h3>
+          </li>
+          <li class="sub-topic-container">
+            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
+            <h3 class="sub-tobic-header">JavaScript frameworks and libraries (React, Angular, Vue)</h3>
           </li>
         </ul>
       </section>
