@@ -140,3 +140,35 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+@media (max-width: 1100px) {
+  .details-container {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 4%;
+  }
+
+  .sub-topics-container {
+    width: 92%;
+    border-radius: 8px;
+    margin-top: 12rem;
+    margin-left: 4%;
+  }
+}
+
+@media (max-width: 800px) {
+  .sub-topics-container {
+    margin-top: 16rem;
+  }
+}
+
+@media (max-width: 470px) {
+  .details-container {
+    height: 584px;
+  }
+  .details-card-container {
+    width: 98%;
+  }
+}
