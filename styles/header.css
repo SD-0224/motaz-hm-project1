@@ -205,5 +205,5 @@ body {
 
 .inline-link{
   text-decoration: underline;
-  color: #005286;
+  color: #005286 !important;
 }
