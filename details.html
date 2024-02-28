@@ -20,8 +20,9 @@
     <link rel="stylesheet" href="./styles/list.css" />
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-    <script src="./scripts/darkMode.js" defer></script>
-    <script src="./scripts/favourites.js" defer></script>
+    <script src="./scripts/details.js" type="module" defer></script>
+    <script src="./scripts/darkMode.js" type="module" defer></script>
+    <script src="./scripts/favourites.js" type="module" defer></script>
     <title>Details Page</title>
   </head>
   <body class="dark">
@@ -55,42 +56,29 @@
     <main class="main">
       <section class="details-container">
         <div class="details-text-container">
-          <div class="details-category">Web Development Languaes</div>
-          <h2 class="details-title">Javascript</h2>
-          <div class="details-stars-container">
+          <div class="details-category" id="category">__________________________</div>
+          <h2 class="details-title title-elem">____________________</h2>
+          <div class="details-stars-container" id="stars">
             <div class="stars-outer-container">
               <ion-icon size="medium" name="star-outline"></ion-icon>
               <ion-icon size="medium" name="star-outline"></ion-icon>
               <ion-icon size="medium" name="star-outline"></ion-icon>
               <ion-icon size="medium" name="star-outline"></ion-icon>
               <ion-icon size="medium" name="star-outline"></ion-icon>
-
-              <div
-                class="stars-inner-container"
-                style="clip-path: polygon(0 0, 81.8% 0, 81.8% 100%, 0% 100%)"
-              >
-                <ion-icon size="medium" name="star"></ion-icon>
-                <ion-icon size="medium" name="star"></ion-icon>
-                <ion-icon size="medium" name="star"></ion-icon>
-                <ion-icon size="medium" name="star"></ion-icon>
-                <ion-icon size="medium" name="star"></ion-icon>
-              </div>
             </div>
           </div>
-          <p class="details-content">
-            JavaScript is a high-level programming language that is used to create interactive web pages and
-            dynamic user interfaces. It allows for the creation of complex, responsive web applications that
-            can run both on the client side (in the web browser) and the server side (using Node.js).
-            JavaScript is one of the most widely-used programming languages in web development.
+          <p class="details-content" id="description">
+            __________________________ __________________________ __________________________
           </p>
         </div>
         <aside class="details-card-container">
           <div class="details-image-container">
-            <img class="details-image" src="./images/javascript.jpg" alt="Javascript" />
+            <img class="details-image" id="image" src="./Loading_icon.gif" alt="loading image" />
           </div>
           <div class="details-content-container">
             <div class="details-topic-text">
-              <span class="bold">Javascript</span> by <a href="#" class="inline-link">Emily Chen</a>
+              <span class="bold title-elem">________</span> by
+              <a href="#" class="inline-link" id="author">________</a>
             </div>
             <div class="add-fav-container">
               <div>Interested about this topic?</div>
@@ -104,33 +92,8 @@
         </aside>
       </section>
       <section class="sub-topics-container">
-        <h2 class="sub-topics-header">Javascript Sub Topics</h2>
-        <ul>
-          <li class="sub-topic-container">
-            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
-            <h3 class="sub-tobic-header">JavaScript data types and variables</h3>
-          </li>
-          <li class="sub-topic-container">
-            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
-            <h3 class="sub-tobic-header">JavaScript functions and control flow</h3>
-          </li>
-          <li class="sub-topic-container">
-            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
-            <h3 class="sub-tobic-header">JavaScript objects and classes</h3>
-          </li>
-          <li class="sub-topic-container">
-            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
-            <h3 class="sub-tobic-header">JavaScript DOM manipulation and events</h3>
-          </li>
-          <li class="sub-topic-container">
-            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
-            <h3 class="sub-tobic-header">JavaScript asynchronous programming and callbacks</h3>
-          </li>
-          <li class="sub-topic-container">
-            <ion-icon class="sub-topic-icon" name="checkmark-circle-outline"></ion-icon>
-            <h3 class="sub-tobic-header">JavaScript frameworks and libraries (React, Angular, Vue)</h3>
-          </li>
-        </ul>
+        <h2 class="sub-topics-header" id="sub-topics-header">________</h2>
+        <ul id="sub-topics-list"></ul>
       </section>
 
       <section id="favrourites-section" class="px-4pc push-to-bottom">
