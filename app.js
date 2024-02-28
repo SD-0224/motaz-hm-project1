@@ -5,7 +5,7 @@ displayList();
 
 //functions
 async function displayList() {
-  const data = await fetchData("data.json");
+  const data = await fetchData("https://tap-web-1.herokuapp.com/topics/list");
 
   if (!data) {
     return;
@@ -17,7 +17,7 @@ async function displayList() {
     const liElement = document.createElement("li");
     const ratingPercentage = (item.rating / 5) * 100;
     liElement.innerHTML = `
-        <a href="details.html">
+        <a href="details.html?id=${item.id}"">
           <article class="article-container">
             <div class="article-image-container">
               <img class="article-image" src="./images/${item.image}" alt="${item.topic}" />
