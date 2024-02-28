@@ -1,3 +1,5 @@
+import { displayStarsString } from "./displayStars.js";
+
 const courseContainer = document.getElementById("cards-container");
 const topicsFound = document.getElementById("topics-found");
 
@@ -26,20 +28,7 @@ async function displayList() {
               <div class="article-category">${item.category}</div>
               <h3 class="article-topic">${item.topic}</h3>
               <div class="stars-container">
-                <div class="stars-outer-container">
-                  <ion-icon size="medium" name="star-outline"></ion-icon>
-                  <ion-icon size="medium" name="star-outline"></ion-icon>
-                  <ion-icon size="medium" name="star-outline"></ion-icon>
-                  <ion-icon size="medium" name="star-outline"></ion-icon>
-                  <ion-icon size="medium" name="star-outline"></ion-icon>
-
-                  <div class="stars-inner-container" style="clip-path: polygon(0 0, ${ratingPercentage}% 0, ${ratingPercentage}% 100%, 0% 100%);">
-                    <ion-icon size="medium" name="star"></ion-icon>
-                    <ion-icon size="medium" name="star"></ion-icon>
-                    <ion-icon size="medium" name="star"></ion-icon>
-                    <ion-icon size="medium" name="star"></ion-icon>
-                    <ion-icon size="medium" name="star"></ion-icon>
-                  </div>
+                ${displayStarsString(ratingPercentage)}
                 </div>
                 </div>
                 <div class="article-author">Author: ${item.name}</div>
