@@ -44,6 +44,7 @@ async function fetchData(path) {
     const response = await fetch(path);
     return await response.json();
   } catch (error) {
-    return console.log("Data base could not be loaded");
+    topicsFound.innerText = "Something went wrong. Web topics failed to load.";
+    return;
   }
 }
