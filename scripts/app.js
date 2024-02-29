@@ -1,17 +1,28 @@
 import { displayStarsString } from "./displayStars.js";
 
-const courseContainer = document.getElementById("cards-container");
+const cardsContainer = document.getElementById("cards-container");
 const topicsFound = document.getElementById("topics-found");
+const sortElem = document.getElementById("sortby");
 
-displayList();
+const data = await fetchData("https://tap-web-1.herokuapp.com/topics/list");
+const errorMessage = "Something went wrong. Web topics failed to load.";
+
+displayList(data);
+
+sortElem.addEventListener("change", (event) => {
+  let sortedData = [];
+  let sortType = event.target.value;
+  sortedData = sortData(sortType);
+  displayList(sortedData);
+});
 
 //functions
-async function displayList() {
-  const data = await fetchData("https://tap-web-1.herokuapp.com/topics/list");
-
+async function displayList(data) {
   if (!data) {
+    topicsFound.innerText = errorMessage;
     return;
   }
+  cardsContainer.innerHTML = ``;
 
   topicsFound.innerText = `"${data.length}" Web Topics Found`;
 
@@ -35,7 +46,7 @@ async function displayList() {
               </div>
           </article>
         </a>`;
-    courseContainer.appendChild(liElement);
+    cardsContainer.appendChild(liElement);
   });
 }
 
@@ -44,7 +55,29 @@ async function fetchData(path) {
     const response = await fetch(path);
     return await response.json();
   } catch (error) {
-    topicsFound.innerText = "Something went wrong. Web topics failed to load.";
+    topicsFound.innerText = errorMessage;
     return;
   }
+}
+
+function sortData(sortType) {
+  let sorted = [];
+
+  if (sortType === "rating") {
+    sorted = data.toSorted((a, b) => {
+      return b.rating - a.rating;
+    });
+  } else if (sortType === "id") {
+    sorted = data.toSorted((a, b) => {
+      return a.id - b.id;
+    });
+  } else {
+    sorted = data.toSorted((a, b) => {
+      let textA = a[sortType].toUpperCase();
+      let textB = b[sortType].toUpperCase();
+      return textA < textB ? -1 : textA > textB ? 1 : 0;
+    });
+  }
+
+  return sorted;
 }

@@ -23,6 +23,7 @@
     <script src="./scripts/app.js" type="module" defer></script>
     <script src="./scripts/darkMode.js" type="module" defer></script>
     <script src="./scripts/favourites.js" type="module" defer></script>
+
     <title>Web Topics</title>
   </head>
   <body class="dark">
@@ -62,7 +63,11 @@
         <div class="sortby-bar">
           <label for="sortby">Sort by:</label>
           <select id="sortby" name="filter-sort">
-            <option value="Default">Default</option>
+            <option value="id">Default</option>
+            <option value="topic">Topic</option>
+            <option value="name">Author</option>
+            <option value="category">Category</option>
+            <option value="rating">Rating</option>
           </select>
         </div>
         <div class="filterby-bar">
@@ -76,7 +81,7 @@
       <section class="cards-section">
         <h2 id="topics-found">Loading Web Topics...</h2>
         <ul id="cards-container">
-          <!-- Handled in javascript -->
+          <!-- Handled in app.js -->
         </ul>
       </section>
 
