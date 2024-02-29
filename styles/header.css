@@ -55,6 +55,10 @@ body {
   overflow-x: hidden;
 }
 
+option{
+  background-color: var(--bg_default);
+}
+
 .px-4pc {
   padding-left: 4%;
   padding-right: 4%;
