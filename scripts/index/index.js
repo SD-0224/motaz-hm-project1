@@ -1,5 +1,5 @@
 import { fetchData } from "../modules/fetch.js";
-import { displayList, addFilterTypes } from "./indexView.js";
+import { displayList, addFilterTypes, handleData } from "./indexView.js";
 import { debounce } from "../modules/debounce.js";
 
 const dataPath = "https://tap-web-1.herokuapp.com/topics/list";
@@ -14,63 +14,22 @@ const filterElem = document.getElementById("filterby");
 
 let sortType = "";
 let filterType = "";
+let searchValue = "";
 
 searchElem.addEventListener("input", (event) => {
-  debouncedSearchData(event.target.value);
+  searchValue = event.target.value;
+  debouncedSearchData(searchValue, sortType, filterType);
 });
 
-sortElem.addEventListener("change", (event) => {
-  let sortedData = [];
+sortElem.addEventListener("change", async (event) => {
   sortType = event.target.value;
-  const filteredData = filterData(data, filterType);
-  sortedData = sortData(filteredData, sortType);
-  displayList(sortedData);
+  handleData(searchValue, sortType, filterType);
 });
 
-filterElem.addEventListener("change", (event) => {
-  let filteredData = [];
+filterElem.addEventListener("change", async (event) => {
   filterType = event.target.value;
-  const sortedData = sortData(data, sortType);
-  filteredData = filterData(sortedData, filterType);
-  displayList(filteredData);
+  handleData(searchValue, sortType, filterType);
 });
 
 // functions
-const debouncedSearchData = debounce(searchData, 300);
-
-async function searchData(searchValue) {
-  const searchData = await fetchData(`https://tap-web-1.herokuapp.com/topics/list?phrase=${searchValue}`);
-  displayList(searchData);
-}
-
-function sortData(data, sortType) {
-  if (!sortType) {
-    return data;
-  }
-  let sorted = [];
-
-  if (sortType === "rating") {
-    sorted = data.toSorted((a, b) => {
-      return b.rating - a.rating;
-    });
-  } else if (sortType === "id") {
-    sorted = data.toSorted((a, b) => {
-      return a.id - b.id;
-    });
-  } else {
-    sorted = data.toSorted((a, b) => {
-      let textA = a[sortType].toUpperCase();
-      let textB = b[sortType].toUpperCase();
-      return textA < textB ? -1 : textA > textB ? 1 : 0;
-    });
-  }
-  return sorted;
-}
-
-function filterData(data, filterType) {
-  if (!filterType) {
-    return data;
-  }
-  const filtered = data.filter((item) => item.category === filterType);
-  return filtered;
-}
+const debouncedSearchData = debounce(handleData, 300);
