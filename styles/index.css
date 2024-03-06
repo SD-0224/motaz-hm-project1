@@ -12,7 +12,6 @@
   min-height: 46px;
   background: var(--bg_default);
   display: flex;
-  overflow: hidden;
   justify-content: center;
   border-radius: 12px;
   border-style: solid;
@@ -71,12 +70,6 @@
   margin-right: 0.6rem;
   margin-top: 1rem;
   padding-bottom: 0.2rem;
-}
-
-input:focus,
-select:focus {
-  background: var(--bg_body);
-  outline-width: 0;
 }
 
 .filter-bar-container div:first-child input {

@@ -55,8 +55,15 @@ body {
   overflow-x: hidden;
 }
 
-option{
+option {
   background-color: var(--bg_default);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #32a1ce;
+  border-radius: 8px;
+  z-index: 20;
 }
 
 .px-4pc {
@@ -202,12 +209,11 @@ option{
   }
 }
 
-
-.bold{
+.bold {
   font-weight: bold;
 }
 
-.inline-link{
+.inline-link {
   text-decoration: underline;
   color: #005286 !important;
 }
