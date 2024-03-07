@@ -4,8 +4,8 @@ export function debounce(callback, delay) {
   return (...args) => {
     clearTimeout(timer);
 
-    timer = setTimeout(() => {
-      callback(...args);
+    timer = setTimeout(async () => {
+      await callback(...args);
     }, delay);
   };
 }

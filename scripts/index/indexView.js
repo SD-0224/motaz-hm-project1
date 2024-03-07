@@ -1,9 +1,11 @@
-import { fetchData } from "../modules/fetch.js";
 import { displayStarsString } from "../modules/displayStars.js";
+import { debounce } from "../modules/debounce.js";
 
 const cardsContainerElem = document.getElementById("cards-container");
 const topicsFoundElem = document.getElementById("topics-found");
-const filterBy = document.getElementById("filterby");
+const filterElem = document.getElementById("filterby");
+const searchElem = document.getElementById("filter-search");
+const sortElem = document.getElementById("sortby");
 
 const errorMessage = "Something went wrong. Web topics failed to load.";
 
@@ -50,47 +52,32 @@ export function addFilterTypes(data) {
   const filterTypes = Array.from(filterTypesSet);
 
   filterTypes.map((type) => {
-    filterBy.innerHTML += `
+    filterElem.innerHTML += `
     <option value="${type}">${type}</option>
   `;
   });
 }
 
-export async function handleData(searchValue, sortType, filterType) {
-  const searchData = await fetchData(`https://tap-web-1.herokuapp.com/topics/list?phrase=${searchValue}`);
-  const filteredData = filterData(searchData, filterType);
-  const sortedData = sortData(filteredData, sortType);
-  displayList(sortedData);
+export function addMutateEventListeners(onSearch, onSort, onFilter) {
+  searchElem.addEventListener("input", async (event) => {
+    const searchValue = event.target.value;
+    debouncedSearch(onSearch, searchValue);
+  });
+
+  sortElem.addEventListener("change", (event) => {
+    const sortType = event.target.value;
+    const data = onSort(sortType);
+    displayList(data);
+  });
+
+  filterElem.addEventListener("change", (event) => {
+    const filterType = event.target.value;
+    const data = onFilter(filterType);
+    displayList(data);
+  });
 }
 
-function sortData(data, sortType) {
-  if (!sortType) {
-    return data;
-  }
-  let sorted = [];
-
-  if (sortType === "rating") {
-    sorted = data.toSorted((a, b) => {
-      return b.rating - a.rating;
-    });
-  } else if (sortType === "id") {
-    sorted = data.toSorted((a, b) => {
-      return a.id - b.id;
-    });
-  } else {
-    sorted = data.toSorted((a, b) => {
-      let textA = a[sortType].toUpperCase();
-      let textB = b[sortType].toUpperCase();
-      return textA < textB ? -1 : textA > textB ? 1 : 0;
-    });
-  }
-  return sorted;
-}
-
-function filterData(data, filterType) {
-  if (!filterType) {
-    return data;
-  }
-  const filtered = data.filter((item) => item.category === filterType);
-  return filtered;
-}
+const debouncedSearch = debounce(async (onSearch, searchValue) => {
+  const data = await onSearch(searchValue);
+  displayList(data);
+}, 300);
