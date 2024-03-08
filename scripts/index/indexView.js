@@ -33,8 +33,7 @@ export async function displayList(data) {
                 <h3 class="article-topic">${item.topic}</h3>
                 <div class="stars-container">
                   ${displayStarsString(ratingPercentage)}
-                  </div>
-                  </div>
+                </div>
                   <div class="article-author">Author: ${item.name}</div>
                 </div>
             </article>
