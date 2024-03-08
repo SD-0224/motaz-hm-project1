@@ -34,3 +34,37 @@ export async function displayItem(item) {
           </li>`)
   );
 }
+
+const addFavButton = document.getElementById("add-fav-button");
+const addFavText = document.getElementById("add-fav-text");
+const addFavIcon = document.getElementById("add-fav-icon");
+
+export function isFavourite(id, array) {
+  if (array.includes(id)) {
+    addFavourite();
+  }
+}
+
+export function addFavouritesEventListeners(id, array) {
+  addFavButton.addEventListener("click", () => {
+    if (!array.includes(id)) {
+      array.push(id);
+      localStorage.favourites = JSON.stringify(array);
+      addFavourite();
+    } else {
+      array = array.filter((itemId) => itemId !== id);
+      localStorage.favourites = JSON.stringify(array);
+      removeFavourite();
+    }
+  });
+}
+
+function addFavourite() {
+  addFavText.innerText = "Remove Favourite";
+  addFavIcon.setAttribute("name", "heart");
+}
+
+function removeFavourite() {
+  addFavText.innerText = "Add to Favourites";
+  addFavIcon.setAttribute("name", "heart-outline");
+}

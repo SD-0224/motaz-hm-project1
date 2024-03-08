@@ -76,7 +76,7 @@
   flex-grow: 1;
 }
 
-.add-fav-button {
+#add-fav-button {
   height: 56px;
   font-size: 1.3rem;
   border-style: none;
@@ -91,12 +91,12 @@
   color: black;
 }
 
-.add-fav-button:hover {
+#add-fav-button:hover {
   background-color: #52d2a5;
   scale: 1.05;
 }
 
-.add-fav-button * {
+#add-fav-button * {
   color: white;
 }
 
