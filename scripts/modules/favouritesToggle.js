@@ -3,6 +3,6 @@ const favSection = document.getElementById("favrourites-section");
 
 favButton.addEventListener("click", favourtiesVisibilityToggle);
 
-function favourtiesVisibilityToggle() {
+export function favourtiesVisibilityToggle() {
   favSection.classList.toggle("push-to-bottom");
 }

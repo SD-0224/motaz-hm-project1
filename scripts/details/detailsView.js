@@ -1,5 +1,6 @@
 import { displayStarsString } from "../modules/displayStars.js";
 import { displayFavourites } from "../modules/displayFavourites.js";
+import { favourtiesVisibilityToggle } from "../modules/favouritesToggle.js";
 
 const addFavButton = document.getElementById("add-fav-button");
 const addFavText = document.getElementById("add-fav-text");
@@ -63,11 +64,13 @@ export function addFavouritesEventListeners(id, array) {
       localStorage.favourites = JSON.stringify(array);
       addFavourite();
       displayFavourites();
+      favourtiesVisibilityToggle();
     } else {
       array = array.filter((itemId) => itemId !== id);
       localStorage.favourites = JSON.stringify(array);
       removeFavourite();
       displayFavourites();
+      favourtiesVisibilityToggle();
     }
   });
 }
