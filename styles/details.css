@@ -87,13 +87,18 @@
   gap: 0.8rem;
 }
 
-.details-content-container *{ 
+.details-content-container * {
   color: black;
 }
 
 #add-fav-button:hover {
   background-color: #52d2a5;
   scale: 1.05;
+}
+
+#add-fav-button:active {
+  scale: 0.95;
+  transition: 50ms;
 }
 
 #add-fav-button * {
