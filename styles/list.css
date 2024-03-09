@@ -115,7 +115,8 @@
 
 #favrourites-section {
   background: var(--bg_default);
-  min-height: 180px;
+  z-index: 20;
+  min-height: 190px;
   width: 100%;
   position: fixed;
   align-items: center;
@@ -145,6 +146,7 @@
 
 #favourites-container li {
   min-width: 120px;
+  max-width: 120px;
   height: 110px;
   border-radius: 8px;
   overflow: hidden;

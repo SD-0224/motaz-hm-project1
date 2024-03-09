@@ -1,4 +1,5 @@
 import { displayStarsString } from "../modules/displayStars.js";
+import { displayFavourites } from "../modules/displayFavourites.js";
 
 const categoryElem = document.getElementById("category");
 const titleElems = document.querySelectorAll(".title-elem");
@@ -51,10 +52,12 @@ export function addFavouritesEventListeners(id, array) {
       array.push(id);
       localStorage.favourites = JSON.stringify(array);
       addFavourite();
+      displayFavourites();
     } else {
       array = array.filter((itemId) => itemId !== id);
       localStorage.favourites = JSON.stringify(array);
       removeFavourite();
+      displayFavourites();
     }
   });
 }

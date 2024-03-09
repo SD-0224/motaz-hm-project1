@@ -1,5 +1,6 @@
 import { displayItem, isFavourite, addFavouritesEventListeners } from "./detailsView.js";
 import { fetchData } from "../modules/fetch.js";
+import { displayFavourites } from "../modules/displayFavourites.js";
 
 const queryParams = new URLSearchParams(window.location.search);
 
@@ -14,3 +15,5 @@ let favoutiresIdArray = localStorage.favourites ? JSON.parse(localStorage.favour
 
 isFavourite(intId, favoutiresIdArray);
 addFavouritesEventListeners(intId, favoutiresIdArray);
+
+displayFavourites();
