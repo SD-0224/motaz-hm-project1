@@ -1,6 +1,10 @@
 import { displayStarsString } from "../modules/displayStars.js";
 import { displayFavourites } from "../modules/displayFavourites.js";
 
+const addFavButton = document.getElementById("add-fav-button");
+const addFavText = document.getElementById("add-fav-text");
+const addFavIcon = document.getElementById("add-fav-icon");
+
 const categoryElem = document.getElementById("category");
 const titleElems = document.querySelectorAll(".title-elem");
 const starsElem = document.getElementById("stars");
@@ -10,7 +14,17 @@ const authorElem = document.getElementById("author");
 const subTopicsHeaderElem = document.getElementById("sub-topics-header");
 const subTopicsListElem = document.getElementById("sub-topics-list");
 
+const detailsTextContainerElem = document.querySelector(".details-text-container");
+const asideContainerElem = document.querySelector(".details-card-container");
+const subtopicsContainerELem = document.querySelector(".sub-topics-container");
+
 export async function displayItem(item) {
+  if (!item) {
+    detailsTextContainerElem.innerHTML = "<h2>Something went wrong, Failed to load...</h2>";
+    asideContainerElem.remove();
+    subtopicsContainerELem.remove();
+    return;
+  }
   //main section
   categoryElem.innerText = item.category;
   titleElems.forEach((elem) => (elem.innerText = item.topic));
@@ -35,10 +49,6 @@ export async function displayItem(item) {
           </li>`)
   );
 }
-
-const addFavButton = document.getElementById("add-fav-button");
-const addFavText = document.getElementById("add-fav-text");
-const addFavIcon = document.getElementById("add-fav-icon");
 
 export function isFavourite(id, array) {
   if (array.includes(id)) {

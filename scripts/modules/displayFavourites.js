@@ -17,6 +17,11 @@ export async function displayFavourites() {
 
   favListElem.innerHTML = ``;
 
+  if (!favourites[0]) {
+    favHeaderElem.innerText = "Something went wrong, failed to load";
+    return;
+  }
+  
   favourites.forEach((item) => {
     displayFavourite(item);
   });

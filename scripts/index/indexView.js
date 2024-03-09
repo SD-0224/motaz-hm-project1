@@ -43,6 +43,9 @@ export async function displayList(data) {
 }
 
 export function addFilterTypes(data) {
+  if (!data || !Array.isArray(data)) {
+    return;
+  }
   const filterTypesSet = new Set();
   data.forEach((item) => {
     filterTypesSet.add(item.category);
