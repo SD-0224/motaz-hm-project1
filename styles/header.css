@@ -67,7 +67,7 @@ select:focus {
   z-index: 20;
 }
 
-.px-4pc {
+.def-pad {
   padding-left: 4%;
   padding-right: 4%;
 }
