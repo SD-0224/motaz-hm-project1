@@ -15,8 +15,8 @@ export async function initializeData() {
 }
 
 export async function onSearch(searchText) {
-  storedData = await fetchData(`https://tap-web-1.herokuapp.com/topics/list?phrase=${searchValue}`);
   searchValue = searchText;
+  storedData = await fetchData(`https://tap-web-1.herokuapp.com/topics/list?phrase=${searchValue}`);
   return mutateData();
 }
 
