@@ -29,6 +29,9 @@ A blog website for Web development topics, where authors write about various top
 ```
 1. Static site
 2. Dark mode detection and toggle
-3. Fetching data from a json file
-4. Displaying data dynamically
+3. Fetching articles from an API
+4. Displaying articles dynamically
+5. Search, sort, and filter feature
+6. Unique details page for each article
+7. Ability to add and remove articles from a favourites menu(stored in local storage)
 ```
