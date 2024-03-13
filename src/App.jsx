@@ -1,10 +1,12 @@
 import Navbar from "./components/Navbar";
+import WelcomeSection from "./components/WelcomeSection";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Navbar></Navbar>
+        <Navbar/>
+        <WelcomeSection />
       </header>
     </div>
   );
