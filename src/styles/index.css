@@ -1,0 +1,71 @@
+* {
+  font-family: "Nunito Sans", sans-serif;
+
+  list-style: none;
+  text-decoration: none;
+
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  border-width: 1px;
+  transition: 300ms;
+  transition-timing-function: cubic-bezier();
+
+  color: var(--body-text);
+}
+
+*::-webkit-scrollbar {
+  display: block;
+  width: 8px;
+  position: fixed;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: var(--bg_default);
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: rgba(120, 120, 120, 0.4);
+  border-radius: 10rem;
+}
+
+body {
+  --brand-primary: #0768ac;
+  --brand-secondary: #03c180;
+  --bg_default: #ffffff;
+  --bg_body: #f0f9ff;
+  --lines-color: #dddddd;
+  --body-text: #333333;
+  --heart-color: #dc143c;
+  --shadow-default: rgba(0, 0, 0, 0.2);
+
+  background: var(--bg_body);
+  overflow-x: hidden;
+}
+
+body.dark {
+  --brand-primary: #0768ac;
+  --brand-secondary: #03c180;
+  --bg_default: #1a1a1a;
+  --bg_body: #282828;
+  --lines-color: #000000;
+  --body-text: #ededed;
+  --heart-color: #dc143c;
+}
+
+option {
+  background-color: var(--bg_default);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #32a1ce;
+  border-radius: 8px;
+  z-index: 20;
+}
+
+.def-pad {
+  padding-left: 4%;
+  padding-right: 4%;
+}
