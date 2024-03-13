@@ -46,3 +46,18 @@
 .navbar button:hover * {
   color: var(--bg_default);
 }
+
+@media (max-width: 750px) {
+  .nav-buttons h3 {
+    display: none;
+  }
+
+  .welcome-text-container {
+    margin-top: 36px;
+  }
+
+  #header-triangle-gradiant,
+  #header-triangle {
+    height: 26px;
+  }
+}
