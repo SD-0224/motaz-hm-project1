@@ -69,3 +69,12 @@ select:focus {
   padding-left: 4%;
   padding-right: 4%;
 }
+
+.main {
+  min-height: 100vh;
+  padding-top: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+}
