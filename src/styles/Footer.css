@@ -1,0 +1,27 @@
+.footer-container {
+  text-align: center;
+  padding-top: 0.8rem;
+  padding-bottom: 2rem;
+}
+
+.footer-text {
+  display: flex;
+  font-weight: bold;
+  gap: 3px;
+  align-items: center;
+  justify-content: center;
+}
+
+.heart-icon {
+  font-size: 1.8rem;
+  color: var(--heart-color);
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.inline-link {
+  text-decoration: underline;
+  color: #005286 !important;
+}

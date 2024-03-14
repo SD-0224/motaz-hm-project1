@@ -2,6 +2,7 @@ import Navbar from "./components/Navbar";
 import WelcomeSection from "./components/WelcomeSection";
 import Searchbar from "./components/Searchbar";
 import ArticlesList from "./components/ArticlesList";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Searchbar />
         <ArticlesList />
       </main>
+      <Footer />
     </>
   );
 }
