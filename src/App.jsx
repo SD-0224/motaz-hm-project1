@@ -1,14 +1,20 @@
 import Navbar from "./components/Navbar";
 import WelcomeSection from "./components/WelcomeSection";
+import Searchbar from "./components/Searchbar";
+import ArticlesList from "./components/ArticlesList";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <Navbar/>
+    <>
+      <header>
+        <Navbar />
         <WelcomeSection />
       </header>
-    </div>
+      <main className="main def-pad">
+        <Searchbar />
+        <ArticlesList />
+      </main>
+    </>
   );
 }
 
