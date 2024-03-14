@@ -7,7 +7,11 @@ const Article = ({ item }) => {
       <a href={`details.html?id=${item.id}`}>
         <article className="article-container">
           <div className="article-image-container">
-            <img className="article-image" src={`./images/${item.image}`} alt={item.topic} />
+            <img
+              className="article-image"
+              src={process.env.PUBLIC_URL + `/images/${item.image}`}
+              alt={item.topic}
+            />
           </div>
           <div className="article-text-container">
             <div className="article-category">{item.category}</div>
