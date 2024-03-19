@@ -1,5 +1,5 @@
 {
-  "homepage": "https://sd-0224.github.io/motaz-hm-project1/",
+  "homepage": "./",
   "name": "project1",
   "version": "0.1.0",
   "private": true,
@@ -39,6 +39,7 @@
     ]
   },
   "devDependencies": {
-    "gh-pages": "^6.1.1"
+    "gh-pages": "^6.1.1",
+    "react-router-dom": "^6.22.3"
   }
 }

@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import WelcomeSection from "./components/WelcomeSection";
 import FavouritesList from "./components/FavouritesList";
@@ -6,15 +7,17 @@ import Home from "./pages/Home";
 
 function App() {
   return (
-    <>
+    <BrowserRouter>
       <header>
         <Navbar />
         <WelcomeSection />
       </header>
-      <Home />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
       <FavouritesList show={true} />
       <Footer />
-    </>
+    </BrowserRouter>
   );
 }
 
