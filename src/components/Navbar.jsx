@@ -1,24 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import ButtonIonIcon from "./ButtonIonIcon";
 import "../styles/Navbar.css";
 
 const Navbar = () => {
   return (
     <nav className="navbar def-pad">
-      <a href="index.html" className="brand-logo">
+      <Link to="./" className="brand-logo">
         Web Topics
-      </a>
+      </Link>
       <ul className="nav-buttons">
         <li>
-          <button id="dark-toggle">
-            <ion-icon id="dark-icon" name="sunny" size="smaller"></ion-icon>
-            <h3 id="dark-text">Light Mode</h3>
-          </button>
+          <ButtonIonIcon text={"Dark Mode"} icon={"sunny"} />
         </li>
         <li>
-          <button id="favourites-toggle">
-            <ion-icon name="heart-outline" size="smaller"></ion-icon>
-            <h3>Favourites</h3>
-          </button>
+          <ButtonIonIcon text={"Favourites"} icon={"heart-outline"} />
         </li>
       </ul>
     </nav>
