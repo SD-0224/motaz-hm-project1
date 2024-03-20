@@ -1,5 +1,5 @@
-import Article from "./Article";
-import "../styles/ArticlesList.css";
+import ArticleCard from "./ArticleCard";
+import "./styles/ArticlesList.css";
 
 const ArticlesList = ({ data }) => {
   return (
@@ -10,7 +10,7 @@ const ArticlesList = ({ data }) => {
       <ul id="cards-container">
         {data.length > 0 &&
           data.map((item) => {
-            return <Article key={item.id} item={item} />;
+            return <ArticleCard key={item.id} item={item} />;
           })}
       </ul>
     </section>

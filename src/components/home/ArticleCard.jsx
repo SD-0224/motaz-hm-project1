@@ -1,7 +1,7 @@
 import React from "react";
-import Stars from "./Stars";
+import Stars from "../shared/Stars";
 
-const Article = ({ item }) => {
+const ArticleCard = ({ item }) => {
   return (
     <li>
       <a href={`details.html?id=${item.id}`}>
@@ -27,4 +27,4 @@ const Article = ({ item }) => {
   );
 };
 
-export default Article;
+export default ArticleCard;

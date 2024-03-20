@@ -69,6 +69,17 @@
   padding: 0.8rem 1.5rem;
 }
 
+option {
+  background-color: var(--bg_default);
+}
+
+input:focus,
+select:focus {
+  outline: 2px solid #32a1ce;
+  border-radius: 8px;
+  z-index: 20;
+}
+
 @media (max-width: 750px) {
   .filter-bar-container {
     display: grid;

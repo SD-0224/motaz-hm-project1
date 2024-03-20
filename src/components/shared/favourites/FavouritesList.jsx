@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { fetchData } from "../modules/fetch";
-import Favourite from "./Favourite";
-
-localStorage.favourites = [1, 4, 5, 10, 2];
+import { fetchData } from "../../../modules/fetch";
+import FavouriteCard from "./FavouriteCard";
+import "./styles/FavouritesList.css";
 
 const FavouritesList = ({ show }) => {
   const [favourites, setFavourites] = useState([]);
@@ -24,7 +23,7 @@ const FavouritesList = ({ show }) => {
       <ul id="favourites-container">
         {favourites.length > 0 &&
           favourites.map((fav) => {
-            return <Favourite key={fav.id} fav={fav} />;
+            return <FavouriteCard key={fav.id} fav={fav} />;
           })}
       </ul>
     </section>

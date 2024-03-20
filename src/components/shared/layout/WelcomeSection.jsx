@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/WelcomeSection.css";
+import "./styles/WelcomeSection.css";
 
 const WelcomeSection = () => {
   return (

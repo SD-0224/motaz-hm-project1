@@ -1,7 +1,7 @@
 import React from "react";
-import Stars from "./Stars";
+import Stars from "../Stars";
 
-const Favourite = ({ fav }) => {
+const FavouriteCard = ({ fav }) => {
   return (
     <li>
       <a href={`details.html?id=${fav.id}`}>
@@ -26,4 +26,4 @@ const Favourite = ({ fav }) => {
   );
 };
 
-export default Favourite;
+export default FavouriteCard;
