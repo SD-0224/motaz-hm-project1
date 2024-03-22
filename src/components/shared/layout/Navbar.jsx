@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import ButtonIonIcon from "../ButtonIonIcon";
-import "./styles/Navbar.css";
 import LayoutContainer from "./LayoutContainer";
+import { ShowFavToggle } from "../favourites/ShowFavContext";
+import "./styles/Navbar.css";
 
 const Navbar = () => {
   return (
@@ -16,7 +17,7 @@ const Navbar = () => {
             <ButtonIonIcon text={"Dark Mode"} icon={"sunny"} />
           </li>
           <li>
-            <ButtonIonIcon text={"Favourites"} icon={"heart-outline"} />
+            <ButtonIonIcon text={"Favourites"} icon={"heart-outline"} onClick={useContext(ShowFavToggle)} />
           </li>
         </ul>
       </LayoutContainer>

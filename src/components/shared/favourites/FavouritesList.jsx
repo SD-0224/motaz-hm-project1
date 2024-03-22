@@ -1,9 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { fetchData } from "../../../modules/fetch";
 import FavouriteCard from "./FavouriteCard";
+import { ShowFavContext } from "./ShowFavContext";
 import "./styles/FavouritesList.css";
 
-const FavouritesList = ({ show }) => {
+const FavouritesList = () => {
   const [favourites, setFavourites] = useState([]);
 
   useEffect(() => {
@@ -16,7 +17,7 @@ const FavouritesList = ({ show }) => {
   }, []);
 
   return (
-    <section id="favrourites-section" className={`def-pad ${!show && "push-to-bottom"}`}>
+    <section id="favrourites-section" className={`def-pad ${useContext(ShowFavContext) && "push-to-bottom"}`}>
       <h2 id="favourites-header">
         {localStorage.favourites ? "My Favourite Topics" : "You have no favourites, maybe add some?"}
       </h2>
