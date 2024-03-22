@@ -8,7 +8,6 @@ export const ShowFavProvider = ({ children }) => {
 
   const toggleShowFav = () => {
     setShowFavContext(!showFavContext);
-    console.log(showFavContext);
   };
 
   return (

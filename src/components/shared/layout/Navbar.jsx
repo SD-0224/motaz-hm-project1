@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import ButtonIonIcon from "../ButtonIonIcon";
 import LayoutContainer from "./LayoutContainer";
 import { ShowFavToggle } from "../favourites/ShowFavContext";
+import { ThemeContextUpdate } from "../ThemeContext";
+import { ThemeContext } from "../ThemeContext";
 import "./styles/Navbar.css";
 
 const Navbar = () => {
@@ -14,7 +16,11 @@ const Navbar = () => {
         </Link>
         <ul className="nav-buttons">
           <li>
-            <ButtonIonIcon text={"Dark Mode"} icon={"sunny"} />
+            <ButtonIonIcon
+              text={useContext(ThemeContext) === "dark" ? "Light Mode" : "Dark Mode"}
+              icon={useContext(ThemeContext) === "dark" ? "sunny" : "moon-outline"}
+              onClick={useContext(ThemeContextUpdate)}
+            />
           </li>
           <li>
             <ButtonIonIcon text={"Favourites"} icon={"heart-outline"} onClick={useContext(ShowFavToggle)} />
