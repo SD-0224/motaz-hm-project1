@@ -20,7 +20,7 @@ const Stars = ({ percentage }) => {
 function makeStarsArray(isFilled) {
   let stars = [];
   for (let i = 0; i < 5; i++) {
-    stars.push(<ion-icon size="medium" name={isFilled ? "star" : "star-outline"}></ion-icon>);
+    stars.push(<ion-icon key={i} size="medium" name={isFilled ? "star" : "star-outline"}></ion-icon>);
   }
   return stars;
 }
