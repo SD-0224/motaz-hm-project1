@@ -4,6 +4,7 @@ import WelcomeSection from "./components/shared/layout/WelcomeSection";
 import FavouritesList from "./components/shared/favourites/FavouritesList";
 import Footer from "./components/shared/layout/Footer";
 import Home from "./pages/Home";
+import Details from "./pages/Details";
 
 function App() {
   return (
@@ -14,6 +15,8 @@ function App() {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/details/:id" element={<Details />} />
+
         </Routes>
       </main>
 

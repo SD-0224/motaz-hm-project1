@@ -1,10 +1,11 @@
 import React from "react";
 import Stars from "../shared/Stars";
+import { Link } from "react-router-dom";
 
 const ArticleCard = ({ item }) => {
   return (
     <li>
-      <a href={`details.html?id=${item.id}`}>
+      <Link to={`/details/${item.id}`}>
         <article className="article-container">
           <div className="article-image-container">
             <img
@@ -22,7 +23,7 @@ const ArticleCard = ({ item }) => {
             <div className="article-author">Author: {item.name}</div>
           </div>
         </article>
-      </a>
+      </Link>
     </li>
   );
 };

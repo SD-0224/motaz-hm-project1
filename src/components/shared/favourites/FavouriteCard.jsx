@@ -1,10 +1,11 @@
 import React from "react";
 import Stars from "../Stars";
+import { Link } from "react-router-dom";
 
 const FavouriteCard = ({ fav }) => {
   return (
     <li>
-      <a href={`details.html?id=${fav.id}`}>
+      <Link to={`details/${fav.id}`}>
         <article className="fav-article-container">
           <div className="fav-article-image-container">
             <img
@@ -21,7 +22,7 @@ const FavouriteCard = ({ fav }) => {
             </div>
           </div>
         </article>
-      </a>
+      </Link>
     </li>
   );
 };
