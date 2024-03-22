@@ -30,7 +30,7 @@ A blog website for Web development topics, where authors write about various top
 2. Dark mode detection and toggle
 3. Fetching articles from an API
 4. Displaying articles dynamically
-5. Search, sort, and filter feature
+5. Search, sort, and filter feature (in progress)
 6. Unique details page for each article
-7. Ability to add and remove articles from a favourites menu(stored in local storage)
+7. Ability to add and remove articles from a favourites menu(stored in local storage) (in progress)
 ```
