@@ -9,8 +9,6 @@
   box-sizing: border-box;
   scroll-behavior: smooth;
   border-width: 1px;
-  transition: 300ms;
-  transition-timing-function: cubic-bezier();
 
   color: var(--body-text);
 }
