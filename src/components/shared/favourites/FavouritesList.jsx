@@ -17,7 +17,10 @@ const FavouritesList = () => {
   }, []);
 
   return (
-    <section id="favrourites-section" className={`def-pad ${useContext(ShowFavContext) && "push-to-bottom"}`}>
+    <section
+      id="favrourites-section"
+      className={`def-pad ${!useContext(ShowFavContext) && "push-to-bottom"}`}
+    >
       <h2 id="favourites-header">
         {localStorage.favourites ? "My Favourite Topics" : "You have no favourites, maybe add some?"}
       </h2>
