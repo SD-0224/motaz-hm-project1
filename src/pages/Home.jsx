@@ -15,7 +15,6 @@ const Home = () => {
       setData(await fetchData(path));
     })();
   }, []);
-  console.log(data);
 
   return (
     <LayoutContainer className={"main"}>
