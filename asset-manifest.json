@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/motaz-hm-project1/static/css/main.b63b0bbf.css",
-    "main.js": "/motaz-hm-project1/static/js/main.6b0acafe.js",
+    "main.css": "/motaz-hm-project1/static/css/main.4d98e501.css",
+    "main.js": "/motaz-hm-project1/static/js/main.8c3df80d.js",
     "static/js/453.171ddc7f.chunk.js": "/motaz-hm-project1/static/js/453.171ddc7f.chunk.js",
     "index.html": "/motaz-hm-project1/index.html",
-    "main.b63b0bbf.css.map": "/motaz-hm-project1/static/css/main.b63b0bbf.css.map",
-    "main.6b0acafe.js.map": "/motaz-hm-project1/static/js/main.6b0acafe.js.map",
+    "main.4d98e501.css.map": "/motaz-hm-project1/static/css/main.4d98e501.css.map",
+    "main.8c3df80d.js.map": "/motaz-hm-project1/static/js/main.8c3df80d.js.map",
     "453.171ddc7f.chunk.js.map": "/motaz-hm-project1/static/js/453.171ddc7f.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b63b0bbf.css",
-    "static/js/main.6b0acafe.js"
+    "static/css/main.4d98e501.css",
+    "static/js/main.8c3df80d.js"
   ]
 }
