@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { fetchData } from "../modules/fetch";
-import DetailsContent from "../components/details/DetailsContent";
 import DetailsCard from "../components/details/DetailsCard";
+import DetailsContent from "../components/details/DetailsContent";
 import SubTopics from "../components/details/SubTopics";
 import "../components/details/styles/Details.css";
+import { fetchData } from "../utilities/fetch";
 
 import { useParams } from "react-router-dom";
 
@@ -19,14 +19,14 @@ const Details = () => {
   }, [id]);
 
   return (
-    <>
+    <main>
       <div className="gray-backdrop"></div>
       <section className="details-container">
         <DetailsContent item={item} />
         <DetailsCard item={item} addFav={addFavourite} />
         <SubTopics item={item} />
       </section>
-    </>
+    </main>
   );
 };
 

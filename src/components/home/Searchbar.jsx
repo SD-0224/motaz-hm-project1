@@ -1,8 +1,8 @@
 import React from "react";
+import FilterElem from "./FilterElem";
 import SearchElem from "./SearchElem";
 import SortElem from "./SortElem";
 import "./styles/Searchbar.css";
-import FilterElem from "./FilterElem";
 
 const Searchbar = () => {
   return (

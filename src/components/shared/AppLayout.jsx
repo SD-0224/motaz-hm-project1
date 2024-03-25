@@ -1,8 +1,8 @@
 import React from "react";
-import Navbar from "./layout/Navbar";
-import WelcomeSection from "./layout/WelcomeSection";
 import FavouritesList from "./favourites/FavouritesList";
 import Footer from "./layout/Footer";
+import Navbar from "./layout/Navbar";
+import WelcomeSection from "./layout/WelcomeSection";
 
 const AppLayout = ({ children }) => {
   return (

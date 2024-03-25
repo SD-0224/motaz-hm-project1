@@ -1,9 +1,7 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import LayoutContainer from "../components/shared/layout/LayoutContainer";
-import Searchbar from "../components/home/Searchbar";
+import React, { useEffect, useState } from "react";
 import ArticlesList from "../components/home/ArticlesList";
-import { fetchData } from "../modules/fetch";
+import Searchbar from "../components/home/Searchbar";
+import { fetchData } from "../utilities/fetch";
 
 const path = "https://tap-web-1.herokuapp.com/topics/list";
 
@@ -17,10 +15,10 @@ const Home = () => {
   }, []);
 
   return (
-    <LayoutContainer className={"main"}>
+    <main className="main def-pad">
       <Searchbar />
       <ArticlesList data={data} />
-    </LayoutContainer>
+    </main>
   );
 };
 

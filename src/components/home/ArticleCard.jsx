@@ -1,6 +1,6 @@
 import React from "react";
-import Stars from "../shared/Stars";
 import { Link } from "react-router-dom";
+import Stars from "../shared/Stars";
 
 const ArticleCard = ({ item }) => {
   return (

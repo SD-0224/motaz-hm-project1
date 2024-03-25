@@ -1,28 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
-import { fetchData } from "../../../modules/fetch";
+import React from "react";
+import { useFav } from "../../../context/FavouritesContext";
 import FavouriteCard from "./FavouriteCard";
-import { ShowFavContext } from "./ShowFavContext";
 import "./styles/FavouritesList.css";
 
 const FavouritesList = () => {
-  const [favourites, setFavourites] = useState([]);
-
-  useEffect(() => {
-    if (localStorage.favourites && localStorage.favourites !== "") {
-      const favIds = localStorage.favourites.split(",");
-      (async () => {
-        setFavourites(await fetchFavourites(favIds));
-      })();
-    }
-  }, []);
+  const { favourites, showFav } = useFav();
 
   return (
-    <section
-      id="favrourites-section"
-      className={`def-pad ${!useContext(ShowFavContext) && "push-to-bottom"}`}
-    >
+    <section id="favrourites-section" className={`def-pad ${!showFav && "push-to-bottom"}`}>
       <h2 id="favourites-header">
-        {localStorage.favourites ? "My Favourite Topics" : "You have no favourites, maybe add some?"}
+        {favourites ? "My Favourite Topics" : "You have no favourites, maybe add some?"}
       </h2>
       <ul id="favourites-container">
         {favourites.length > 0 &&
@@ -33,10 +20,5 @@ const FavouritesList = () => {
     </section>
   );
 };
-
-async function fetchFavourites(idArr) {
-  const favPromises = idArr.map((id) => fetchData(`https://tap-web-1.herokuapp.com/topics/details/${id}`));
-  return await Promise.all(favPromises);
-}
 
 export default FavouritesList;

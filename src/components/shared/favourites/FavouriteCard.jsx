@@ -1,6 +1,6 @@
 import React from "react";
-import Stars from "../Stars";
 import { Link } from "react-router-dom";
+import Stars from "../Stars";
 
 const FavouriteCard = ({ fav }) => {
   return (
