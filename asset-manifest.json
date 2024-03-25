@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/motaz-hm-project1/static/css/main.cdad7874.css",
-    "main.js": "/motaz-hm-project1/static/js/main.f0ca651b.js",
-    "static/js/453.171ddc7f.chunk.js": "/motaz-hm-project1/static/js/453.171ddc7f.chunk.js",
-    "index.html": "/motaz-hm-project1/index.html",
-    "main.cdad7874.css.map": "/motaz-hm-project1/static/css/main.cdad7874.css.map",
-    "main.f0ca651b.js.map": "/motaz-hm-project1/static/js/main.f0ca651b.js.map",
-    "453.171ddc7f.chunk.js.map": "/motaz-hm-project1/static/js/453.171ddc7f.chunk.js.map"
+    "main.css": "./static/css/main.cdad7874.css",
+    "main.js": "./static/js/main.caad17f5.js",
+    "static/js/453.171ddc7f.chunk.js": "./static/js/453.171ddc7f.chunk.js",
+    "index.html": "./index.html",
+    "main.cdad7874.css.map": "./static/css/main.cdad7874.css.map",
+    "main.caad17f5.js.map": "./static/js/main.caad17f5.js.map",
+    "453.171ddc7f.chunk.js.map": "./static/js/453.171ddc7f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.cdad7874.css",
-    "static/js/main.f0ca651b.js"
+    "static/js/main.caad17f5.js"
   ]
 }
