@@ -4,12 +4,15 @@ import DetailsContent from "../components/details/DetailsContent";
 import SubTopics from "../components/details/SubTopics";
 import "../components/details/styles/Details.css";
 import { fetchData } from "../utilities/fetch";
+import { useFav } from "../context/FavouritesContext";
 
 import { useParams } from "react-router-dom";
 
 const Details = () => {
   const [item, setItem] = useState();
+  const [isFav, setIsFav] = useState(false);
   const { id } = useParams();
+  const { favourites, updateFavourites } = useFav();
 
   useEffect(() => {
     const path = `https://tap-web-1.herokuapp.com/topics/details/${id}`;
@@ -18,20 +21,32 @@ const Details = () => {
     })();
   }, [id]);
 
+  useEffect(() => {
+    for (let i = 0; i < favourites.length; i++) {
+      if (favourites && favourites.length > 0) {
+        if (favourites[i].id === Number(id)) {
+          setIsFav(true);
+          return;
+        }
+      }
+    }
+    setIsFav(false);
+  }, [favourites, id]);
+
+  const addFavourite = (id) => {
+    updateFavourites(id);
+  };
+
   return (
     <main>
       <div className="gray-backdrop"></div>
       <section className="details-container">
         <DetailsContent item={item} />
-        <DetailsCard item={item} addFav={addFavourite} />
+        <DetailsCard isFav={isFav} item={item} addFav={addFavourite} />
         <SubTopics item={item} />
       </section>
     </main>
   );
-};
-
-const addFavourite = (id) => {
-  console.log(id);
 };
 
 export default Details;

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const DetailsCard = ({ item, addFav }) => {
+const DetailsCard = ({ isFav, item, addFav }) => {
   return (
     <aside className="details-card">
       <div className="details-image-container">
@@ -22,8 +22,13 @@ const DetailsCard = ({ item, addFav }) => {
         <div className="add-fav-container">
           <div>Interested about this topic?</div>
           <button id="add-fav-button" onClick={() => addFav(item.id)}>
-            <span id="add-fav-text">Add to Favourites</span>
-            <ion-icon id="add-fav-icon" size="large" name="heart-outline" aria-hidden="true"></ion-icon>
+            <span id="add-fav-text">{isFav ? "Remove Favourite" : "Add to Favourites"}</span>
+            <ion-icon
+              id="add-fav-icon"
+              size="large"
+              name={isFav ? "heart" : "heart-outline"}
+              aria-hidden="true"
+            ></ion-icon>
           </button>
           <div className="add-fav-credits">Unlimited Credits</div>
         </div>

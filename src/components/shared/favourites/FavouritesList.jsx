@@ -9,10 +9,13 @@ const FavouritesList = () => {
   return (
     <section id="favrourites-section" className={`def-pad ${!showFav && "push-to-bottom"}`}>
       <h2 id="favourites-header">
-        {favourites ? "My Favourite Topics" : "You have no favourites, maybe add some?"}
+        {!favourites || favourites.length === 0
+          ? "You have no favourites, maybe add some?"
+          : "My Favourite Topics"}
       </h2>
       <ul id="favourites-container">
-        {favourites.length > 0 &&
+        {favourites &&
+          favourites.length > 0 &&
           favourites.map((fav) => {
             return <FavouriteCard key={fav.id} fav={fav} />;
           })}
