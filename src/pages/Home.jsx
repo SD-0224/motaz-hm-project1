@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import ArticlesList from "../components/home/ArticlesList";
 import Searchbar from "../components/home/Searchbar";
 import { fetchData } from "../utilities/fetch";
+import { useDebounce } from "../hooks/useDebounce";
 
 const path = "https://tap-web-1.herokuapp.com/topics/list";
 
@@ -11,6 +12,8 @@ const Home = () => {
   const isInit = useRef(false);
 
   const [searchPhrase, setSearchPhrase] = useState(null);
+  const debouncedSearchPhrase = useDebounce(searchPhrase, 300);
+
   const [filterPhrase, setFilterPhrase] = useState(null);
   const [sortPhrase, setSortPhrase] = useState(null);
 
@@ -29,11 +32,11 @@ const Home = () => {
 
   useEffect(() => {
     (async () => {
-      if (searchPhrase || searchPhrase === "") {
-        setData(await onSearch(searchPhrase));
+      if (debouncedSearchPhrase || debouncedSearchPhrase === "") {
+        setData(await onSearch(debouncedSearchPhrase));
       }
     })();
-  }, [searchPhrase]);
+  }, [debouncedSearchPhrase]);
 
   let viewData = data;
 
