@@ -8,7 +8,7 @@ const DetailsCard = ({ isFav, item, addFav }) => {
         <img
           className="details-image"
           id="image"
-          src={process.env.PUBLIC_URL + (item ? `/images/${item.image}` : `/loading_icon.gif`)}
+          src={process.env.PUBLIC_URL + (item ? `/images/${item.image}` : `/images/loading_icon.gif`)}
           alt={item ? item.topic : `loading`}
         />
       </div>
