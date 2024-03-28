@@ -74,15 +74,14 @@ const onSearch = (searchPhrase) => {
 };
 
 const onSort = (data, sortPhrase) => {
+  if (!sortPhrase || sortPhrase === "id") {
+    return data;
+  }
   let sorted = [];
 
   if (sortPhrase === "rating") {
     sorted = data.toSorted((a, b) => {
       return b.rating - a.rating;
-    });
-  } else if (sortPhrase === "id") {
-    sorted = data.toSorted((a, b) => {
-      return a.id - b.id;
     });
   } else {
     sorted = data.toSorted((a, b) => {
@@ -95,7 +94,7 @@ const onSort = (data, sortPhrase) => {
 };
 
 const onFilter = (data, filterPhrase) => {
-  if (filterPhrase === "id") {
+  if (!filterPhrase || filterPhrase === "id") {
     return data;
   }
   return data.filter((item) => item.category === filterPhrase);
