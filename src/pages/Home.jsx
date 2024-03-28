@@ -7,9 +7,6 @@ import { useData } from "../context/DataContext";
 
 const path = "https://tap-web-1.herokuapp.com/topics/list";
 
-//TODO: remove arrays from initial state to fix loading and no topics found
-//      replace favourites fetching function find a better solution
-
 const Home = () => {
   const { data } = useData();
   const [searchedData, setSearchedData] = useState();
