@@ -1,15 +1,19 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ArticlesList from "../components/home/ArticlesList";
 import Searchbar from "../components/home/Searchbar";
 import { fetchData } from "../utilities/fetch";
 import { useDebounce } from "../hooks/useDebounce";
+import { useData } from "../context/DataContext";
 
 const path = "https://tap-web-1.herokuapp.com/topics/list";
 
+//TODO: remove arrays from initial state to fix loading and no topics found
+//      replace favourites fetching function find a better solution
+
 const Home = () => {
-  const [data, setData] = useState([]);
-  const [filterCategories, setFilterCategories] = useState([]);
-  const isInit = useRef(false);
+  const { data } = useData();
+  const [searchedData, setSearchedData] = useState();
+  const [filterCategories, setFilterCategories] = useState();
 
   const [searchPhrase, setSearchPhrase] = useState(null);
   const debouncedSearchPhrase = useDebounce(searchPhrase, 300);
@@ -17,34 +21,31 @@ const Home = () => {
   const [filterPhrase, setFilterPhrase] = useState(null);
   const [sortPhrase, setSortPhrase] = useState(null);
 
-  useEffect(() => {
-    (async () => {
-      setData(await fetchData(path));
-    })();
-  }, []);
+  console.log("render");
 
   useEffect(() => {
-    if (data.length > 0 && !isInit.current) {
-      setFilterCategories(getCategories(data));
-      isInit.current = true;
-    }
+    setSearchedData(data);
+    setFilterCategories(getCategories(data));
   }, [data]);
 
   useEffect(() => {
     (async () => {
-      if (debouncedSearchPhrase || debouncedSearchPhrase === "") {
-        setData(await onSearch(debouncedSearchPhrase));
+      if (debouncedSearchPhrase) {
+        setSearchedData(await onSearch(debouncedSearchPhrase));
+      } else {
+        setSearchedData(data);
       }
     })();
-  }, [debouncedSearchPhrase]);
+  }, [debouncedSearchPhrase, data]);
 
-  let viewData = data;
+  let viewData = searchedData;
 
   if (filterPhrase) {
-    viewData = onFilter(data, filterPhrase);
+    viewData = onFilter(viewData, filterPhrase);
   }
+
   if (sortPhrase) {
-    viewData = onSort(data, sortPhrase);
+    viewData = onSort(viewData, sortPhrase);
   }
 
   return (

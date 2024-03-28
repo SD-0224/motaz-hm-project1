@@ -22,6 +22,9 @@ const Details = () => {
   }, [id]);
 
   useEffect(() => {
+    if (!favourites) {
+      return;
+    }
     for (let i = 0; i < favourites.length; i++) {
       if (favourites && favourites.length > 0) {
         if (favourites[i].id === Number(id)) {

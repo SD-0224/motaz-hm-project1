@@ -1,28 +1,32 @@
 import React, { useCallback, useContext, useEffect, useState } from "react";
-import { fetchFavourites } from "../utilities/fetchFavourites";
+import { useData } from "./DataContext";
 
 const ShowFavContext = React.createContext(null);
 
 export const ShowFavProvider = ({ children }) => {
-  const [favourites, setFavourites] = useState([]);
+  const { data } = useData();
+  const [favourites, setFavourites] = useState();
   const [showFav, setShowFav] = useState(false);
 
-  const updateFavourites = useCallback(async (id) => {
-    let favIds = getFavIds();
+  const updateFavourites = useCallback(
+    async (id) => {
+      let favIds = getFavIds();
 
-    if (!id) {
-      setFavourites(await fetchFavourites(favIds));
-      return;
-    } else if (favIds.indexOf(`${id}`) !== -1) {
-      favIds = favIds.filter((i) => i !== `${id}`);
-    } else {
-      const idSet = new Set([...favIds, `${id}`]);
-      favIds = [...idSet];
-    }
+      if (!id) {
+        setFavourites(filterFavourites(data, favIds));
+        return;
+      } else if (favIds.indexOf(`${id}`) !== -1) {
+        favIds = favIds.filter((i) => i !== `${id}`);
+      } else {
+        const idSet = new Set([...favIds, `${id}`]);
+        favIds = [...idSet];
+      }
 
-    localStorage.setItem("favourites", favIds);
-    setFavourites(await fetchFavourites(favIds));
-  }, []);
+      localStorage.setItem("favourites", favIds);
+      setFavourites(filterFavourites(data, favIds));
+    },
+    [data]
+  );
 
   useEffect(() => {
     updateFavourites();
@@ -45,6 +49,12 @@ const getFavIds = () => {
   } else {
     return [];
   }
+};
+
+const filterFavourites = (data, favIds) => {
+  return data.filter((item) => {
+    return favIds.includes(item.id.toString());
+  });
 };
 
 export const useFav = () => {
