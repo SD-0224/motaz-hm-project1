@@ -18,8 +18,6 @@ const Home = () => {
   const [filterPhrase, setFilterPhrase] = useState(null);
   const [sortPhrase, setSortPhrase] = useState(null);
 
-  console.log("render");
-
   useEffect(() => {
     setSearchedData(data);
     setFilterCategories(getCategories(data));
